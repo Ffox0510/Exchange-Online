@@ -1,6 +1,6 @@
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
-
+*********Don't Forget about remote Signed*******
 PS C:\WINDOWS\system32> $userCredential = get-credential
 
 cmdlet Get-Credential at command pipeline position 1
