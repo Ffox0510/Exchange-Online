@@ -1,0 +1,29 @@
+1)
+
+Get-ExecutionPolicy -List
+
+$userCredential = get-credential
+
+$Session = New-PSSession -configurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
+
+Import-PSSession $session -DisablenameChecking
+
+Get-mailbox                                                                                ###Run this command just to make sure your in Exchange and see familar mailboxes
+
+
+2)
+
+Get-Recipient a123@FosterFox1.onmicrosoft.com                                              ###the a123@FosterFox1.onmicrosoft.com will be the alias you want to find 
+Get-Mailbox a123@FosterFox1.onmicrosoft.com | select-object -ExpandProperty emailaddresses ###Another Way to seee the alias
+
+
+3)
+
+PS> Set-Mailbox a123@fosterfox1.OnMicrosoft.com -EmailAddresses @{Remove="a123@fosterfox1.ONmicrosoft.com"}  ##you won't get any output on this command run get-mailbox, you get an error
+
+get-mailbox a123@fosterFox1.ONmicrosoft.com
+
+4)
+
+ArtVenere@FosterFox1.OnMicrosoft.com -emailaddress @{Add='a123@fosterfox1.onMicrosoft.com'}
+Get-Mailbox ArtVenere@FosterFox1.OnMicrosoft.com | select-object -ExpandProperty emailaddresses 
