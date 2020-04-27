@@ -3,6 +3,8 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 *********Don't Forget about remote Signed*******
 PS C:\WINDOWS\system32> $userCredential = get-credential
 
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+
 cmdlet Get-Credential at command pipeline position 1
 Supply values for the following parameters:
 Credential
